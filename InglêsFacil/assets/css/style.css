@@ -1,0 +1,298 @@
+/* IMPORTANDO FONTES */
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Exo:wght@300&display=swap');
+
+
+/* INICIO HEADER */
+*{
+    box-sizing: border-box;
+}
+body {
+    background-image: url('../images/outros/fundo.png');
+    margin: 0;
+    font-family: 'Exo', sans-serif;
+}
+.conainer {
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: rgb(44, 44, 44);
+}
+.header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    color: #ffffff;
+
+}
+.header h1 {
+    color: #14207D;
+    font-size: 40px;
+    font-weight: bold;
+    background-color: #ffffff;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-family: 'Indie Flower', cursive;
+}
+.header h1 span {
+    color: #BE0031;
+}
+.header p {
+    font-size: 17px;
+}
+/* FIM HEADER */
+
+
+
+
+/* INICIO APP */
+.app {
+    max-width: 400px;
+    margin: auto;
+}
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+.app .quiz-box {
+    background-color: #3f51b5;
+    padding: 30px 15px;
+    flex-basis: 100%;
+    max-width: 100%;
+}
+.app .quiz-box select {
+    border: none;
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 8px;
+    outline: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #222222;
+    cursor: pointer;
+}
+.app .quiz-box h4,
+.app .quiz-box h1 {
+    font-size: 25px;
+    color: #ffffff;
+    margin: 10px 0px;
+    text-align: center;
+    font-weight: normal;
+}
+.app .quiz-box h1 {
+    text-transform: uppercase;
+    font-size: 40px;
+    font-weight: bold;
+    -webkit-animation: question 1.5s ease alternate infinite;
+    animation: question 1.5s ease alternate infinite;
+}
+@-webkit-keyframes question {
+    0%{
+        -webkit-transform: scale(0.8);
+        transform: scale(0.8);
+    }
+    100%{
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    } 
+}
+@keyframes question {
+    0%{transform: scale(0.8);}
+    100%{transform: scale(1);}
+}
+.app .score-card {
+    background-color: #ff9800;
+    flex-basis: 100%;
+    max-width: 100%;
+    padding: 5px 10px;
+    color: #ffffff;
+    font-size: 18px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.app .option-box {
+    background-color: #c23c3c;
+    min-height: 400px;
+    flex-basis: 100%;
+    max-width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 15px;
+    justify-content: center;
+    align-content: flex-start;
+}
+.app .option-box img {
+    width: 100%;
+    display: block;
+}
+.app .option-box button {
+    flex-basis: calc(50% - 30px);
+    max-width: calc(50% - 30px);
+    margin: 15px;
+    border: 0;
+    padding: 0;
+    border-radius: 4px;
+    overflow: hidden;
+    cursor: pointer;
+    -webkit-animation: button 1s ease;
+    animation: button 1s ease;
+}
+@-webkit-keyframes button {
+    0% {transform: scale(0.5); opacity: 0;}
+    100% {transform: scale(1); opacity: 1;}
+}
+@keyframes button {
+    0% {transform: scale(0.5); opacity: 0;}
+    100% {transform: scale(1); opacity: 1;}
+}
+
+.app .option-box button {
+    position: relative;
+    background-color: #ffffff;
+}
+.app .option-box button.wrong span {
+    position: absolute;
+    left: 0px;
+    background-color: red;
+    top: 0px;
+    font-size: 16px;
+    color: #ffffff;
+    padding: 5px;
+    width: 100%;
+    z-index: 1;
+    -webkit-animation:  alertWrong 1s ease;
+    animation:  alertWrong 1s ease;
+}
+@-webkit-keyframes alertWrong {
+    0%{transform: translateY(-100%);}
+    50%{transform: translateY(100%);}
+    100%{transform: translateY(0%);}
+}
+@keyframes alertWrong {
+    0%{transform: translateY(-100%);}
+    50%{transform: translateY(100%);}
+    100%{transform: translateY(0%);}
+}
+
+.app .option-box button.wrong img {
+    -webkit-animation: imgWrong 1s ease;
+    animation: imgWrong 1s ease;
+}
+@-webkit-keyframes imgWrong {
+    0%,40%,70% {
+        transform: translateX(0px)scale(.8);
+    }
+    15%,55% {
+        transform: translateX(10px)scale(.8);
+    }
+    30%,80% {
+        transform: translateX(-10px)scale(.8);
+    }
+}
+@keyframes imgWrong {
+    0%,40%,70% {
+        transform: translateX(0px)scale(.8);
+    }
+    15%,55% {
+        transform: translateX(10px)scale(.8);
+    }
+    30%,80% {
+        transform: translateX(-10px)scale(.8);
+    }
+}
+
+.app .option-box button.correct span {
+    position: absolute;
+    left: 0px;
+    background-color:green;
+    top: 0px;
+    font-size: 16px;
+    color: #ffffff;
+    padding: 5px;
+    width: 100%;
+    z-index: 1;
+    -webkit-animation:  alertCorrect 1s ease;
+    animation:  alertCorrect 1s ease;
+}
+@-webkit-keyframes alertCorrect {
+    0%{transform: translateY(100%);}
+    100%{transform: translateY(0%);}
+}
+@keyframes alertCorrect {
+    0%{transform: translateY(100%);}
+    100%{transform: translateY(0%);}
+}
+
+.app .option-box button.correct img {
+    -webkit-animation: imgCorrect 1s ease;
+    animation: imgCorrect 1s ease;
+}
+@-webkit-keyframes imgCorrect {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.4);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+@keyframes imgCorrect {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.4);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.app .option-box button.hide {
+    animation: buttonhide 1s ease forwards;
+}
+@keyframes buttonhide {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(0);
+    }
+}
+.app .option-box h1 span {
+    font-size: 18px;
+    color: #ff9800;
+    display: inline-block;
+    padding: 10px 0px;
+}
+.app .option-box h1 {
+    font-size: 30px;
+    color: #ffffff;
+    margin: 0px;
+    text-align: center;
+    animation: quizOver 1s ease;
+    text-transform: uppercase;
+}
+@keyframes quizOver {
+    0% {transform: scale(.5); opacity: 0;}
+    100%{transform: scale(1); opacity: 1;}
+}
+/* FIM APP */
+
+
+
+
+/* FOOTER */
+.footer {
+    margin-top: 50px;
+    color: #ffffff;
+    font-size: 14px;
+    text-align: center;
+    padding: 40px;
+    background-color: rgb(44, 44, 44);
+    border-top: 1px solid #ffffff2a;
+}
